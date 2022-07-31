@@ -1,0 +1,35 @@
+version: "3.5"
+
+
+services:
+
+    ### MariaDB Container #######################################
+
+    mariadb:
+        image: xpert13/mariadb:v.1.0
+        restart: unless-stopped
+        volumes:
+            - ${DATA_SAVE_PATH}/mariadb:/var/lib/mysql
+        container_name: ${PROJECT_NAME}-mariadb
+        ports:
+            - "${MARIADB_PORT}:3306"
+        environment:
+            - MYSQL_DATABASE=${MARIADB_DATABASE}
+            - MYSQL_USER=${MARIADB_USER}
+            - MYSQL_PASSWORD=${MARIADB_PASSWORD}
+            - MYSQL_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
+        networks:
+            - app-network
+
+
+### Networks Setup ############################################
+
+networks:
+    app-network:
+        driver: "bridge"
+
+### Volumes Setup #############################################
+
+volumes:
+    mariadb:
+        driver: "local"
