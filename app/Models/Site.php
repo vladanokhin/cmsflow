@@ -9,4 +9,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Site extends Model
 {
     use SoftDeletes;
+
+    protected $fillable = [
+        'name',
+        'type_id',
+    ];
+
 }
