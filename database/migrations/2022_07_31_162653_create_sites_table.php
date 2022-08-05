@@ -15,14 +15,13 @@ return new class extends Migration
     {
         Schema::create('sites', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 20)->unique();
-            $table->integer('type_id');
-            $table->boolean('is_active')->default(true);
+            $table->string('name', 50)->unique();
+            $table->integer('type_id')->default(1);
 
             $table->timestamps();
             $table->softDeletes();
 
-            $table->index(['name', 'is_active']);
+            $table->index('name');
         });
     }
 
