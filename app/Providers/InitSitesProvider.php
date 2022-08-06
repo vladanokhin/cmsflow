@@ -37,7 +37,8 @@ class InitSitesProvider extends ServiceProvider
         {
             $listSites = File::directories($pathToSites);
             foreach ($listSites as $sitePath) {
-                Site::firstOrCreate(['name' => pathinfo($sitePath, PATHINFO_BASENAME)]);
+                Site::withTrashed()
+                    ->firstOrCreate(['name' => pathinfo($sitePath, PATHINFO_BASENAME)]);
             }
 
         }
