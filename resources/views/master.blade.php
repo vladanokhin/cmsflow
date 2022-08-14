@@ -1,12 +1,12 @@
-@include('_header')
+@include('layouts._header')
 
 <body class="g-sidenav-show  bg-gray-100">
-    @include('_sidebar')
+    @include('layouts._sidebar')
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-        @include('_navbar')
+        @include('layouts._navbar')
         <div class="container-fluid py-4">
             @yield('content')
-            @include('_footer')
+            @include('layouts._footer')
         </div>
     </main>
 </body>

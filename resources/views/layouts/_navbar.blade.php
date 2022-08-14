@@ -41,7 +41,8 @@
                                 <div class="d-flex py-1">
                                     <div class="d-flex flex-column justify-content-center">
                                         <h6 class="text-sm font-weight-normal mb-1">
-                                            <span class="font-weight-bold">List of Sites</span>
+                                            <i class="fa-solid fa-list"></i>
+                                            <span class="font-weight-bold ml-2">List of Sites</span>
                                         </h6>
                                     </div>
                                 </div>
@@ -52,8 +53,8 @@
                                 <div class="d-flex py-1">
                                     <div class="d-flex flex-column justify-content-center">
                                         <h6 class="text-sm font-weight-normal mb-1">
-                                            <i class="fa-solid fa-arrow-right-from-bracket fixed-plugin-button-nav cursor-pointer"></i>
-                                            <span class="font-weight-bold">Log out</span>
+                                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                            <span class="font-weight-bold ml-2">Log out</span>
                                         </h6>
                                     </div>
                                 </div>

@@ -1,4 +1,4 @@
-@extends('_page_card')
+@extends('layouts._page_card')
 
 @section('card_content')
     <div class="table-responsive p-0">
@@ -8,7 +8,7 @@
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Site</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">URL</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Last modified</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Site Type</th>
+{{--                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Site Type</th>--}}
 {{--                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Actions</th>--}}
                 <th></th>
             </tr>
@@ -31,13 +31,13 @@
                         <td>
                             <span class="text-sm font-weight-bold">{{ $site->last_modified }}</span>
                         </td>
-                        <td>
-                            <p class="text-sm font-weight-bold">
-                                <span class="badge bg-gradient-warning">
-                                    {{ $site->type->name }}
-                                </span>
-                            </p>
-                        </td>
+{{--                        <td>--}}
+{{--                            <p class="text-sm font-weight-bold">--}}
+{{--                                <span class="badge bg-gradient-warning">--}}
+{{--                                    {{ $site->type->name }}--}}
+{{--                                </span>--}}
+{{--                            </p>--}}
+{{--                        </td>--}}
                         <td>
                             <div class="dropdown">
                                 <button class="btn btn-link text-secondary mb-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">

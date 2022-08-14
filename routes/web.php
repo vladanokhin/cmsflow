@@ -6,7 +6,7 @@ use App\Http\Controllers\User\SignUpController;
 use App\Http\Controllers\User\SignInController;
 use App\Http\Controllers\User\SignOutController;
 
-Route::get('/', fn () => redirect('sites.list'))->middleware('auth');
+Route::get('/', fn () => redirect(route('sites.list')))->middleware('auth');
 
 Route::name('sites.')->middleware('auth')->group(function () {
     Route::get('sites', [SiteController::class, 'index'])->name('list');

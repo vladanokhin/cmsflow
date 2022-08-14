@@ -1,4 +1,4 @@
-@include('_header')
+@include('layouts._header')
 
 <body>
 <div class="container position-sticky z-index-sticky top-0">
@@ -76,16 +76,21 @@
                                     @endif
                                     <label>Email</label>
                                     <div class="mb-3">
-                                        <input type="email" class="form-control" name="email"
+                                        <input type="email" class="form-control" name="email" value="{{ old('email') }}"
                                                placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+
                                     </div>
                                     <label>Password</label>
                                     <div class="mb-3">
                                         <input type="password" class="form-control" name="password"
-                                               placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                                               placeholder="Password" aria-label="Password"
+                                               aria-describedby="password-addon">
+
                                     </div>
                                     <div class="form-check form-switch">
-                                        <input class="form-check-input" name="rememberMe" type="checkbox" id="rememberMe" checked="">
+                                        <input class="form-check-input" name="rememberMe" type="checkbox"
+                                               id="rememberMe" checked="">
+
                                         <label class="form-check-label" for="rememberMe">Remember me</label>
                                     </div>
                                     <div class="text-center">

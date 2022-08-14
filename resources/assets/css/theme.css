@@ -26606,3 +26606,48 @@ pre[class*="language-"] {
 }
 
 /*# sourceMappingURL=dashboard-free.css.map */
+
+/* Custom styles */
+.ml-0 {
+    margin-left: 0 !important;
+}
+
+.ml-1 {
+    margin-left: 0.25rem !important;
+}
+
+.ml-2 {
+    margin-left: 0.5rem !important;
+}
+
+.ml-3 {
+    margin-left: 1rem !important;
+}
+
+.ml-4 {
+    margin-left: 1.5rem !important;
+}
+
+.ml-5 {
+    margin-left: 3rem !important;
+}
+
+.ml-6 {
+    margin-left: 4rem !important;
+}
+
+.ml-7 {
+    margin-left: 6rem !important;
+}
+
+.ml-8 {
+    margin-left: 8rem !important;
+}
+
+.ml-9 {
+    margin-left: 10rem !important;
+}
+
+.ml-10 {
+    margin-left: 12rem !important;
+}

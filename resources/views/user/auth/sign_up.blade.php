@@ -1,4 +1,4 @@
-@include('_header')
+@include('layouts._header')
 
 <body>
 <!-- Navbar -->
@@ -82,10 +82,10 @@
                                 @endif
                                 <div class="mb-3">
                                     <input type="text" class="form-control" name="name" placeholder="Name"
-                                           aria-label="Name" aria-describedby="email-addon">
+                                           value="{{ old('name') }}" aria-label="Name" aria-describedby="email-addon">
                                 </div>
                                 <div class="mb-3">
-                                    <input type="email" class="form-control" name="email"
+                                    <input type="email" class="form-control" name="email" value="{{ old('email') }}"
                                            placeholder="Email" aria-label="Email" aria-describedby="email-addon">
                                 </div>
                                 <div class="mb-3">

@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('content')
-    @include('_card')
+    @include('layouts._card')
 
     @yield('additional_content')
 @endsection
