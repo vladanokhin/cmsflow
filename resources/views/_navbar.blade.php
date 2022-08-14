@@ -31,16 +31,41 @@
                         </div>
                     </a>
                 </li>
-                <li class="nav-item px-3 d-flex align-items-center">
-                    <a href="javascript:;" class="nav-link text-body p-0">
+                <li class="nav-item dropdown px-3 d-flex align-items-center">
+                    <span class="nav-link text-body p-0" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
-                    </a>
+                    </span>
+                    <ul class="dropdown-menu dropdown-menu-end px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
+                        <li class="mb-2">
+                            <a class="dropdown-item border-radius-md" href="{{ route('sites.list') }}">
+                                <div class="d-flex py-1">
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h6 class="text-sm font-weight-normal mb-1">
+                                            <span class="font-weight-bold">List of Sites</span>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item border-radius-md" href="{{ route('user.sign_out') }}">
+                                <div class="d-flex py-1">
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h6 class="text-sm font-weight-normal mb-1">
+                                            <i class="fa-solid fa-arrow-right-from-bracket fixed-plugin-button-nav cursor-pointer"></i>
+                                            <span class="font-weight-bold">Log out</span>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item dropdown pe-2 d-flex align-items-center">
-                    <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="nav-link text-body p-0" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa fa-bell cursor-pointer"></i>
-                    </a>
-                    <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
+                    </span>
+                    <ul class="dropdown-menu dropdown-menu-end px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
                         <li class="mb-2">
                             <a class="dropdown-item border-radius-md" href="javascript:;">
                                 <div class="d-flex py-1">
