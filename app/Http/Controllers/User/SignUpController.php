@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserSignUpRequest;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class SignUpController extends Controller
@@ -23,31 +23,28 @@ class SignUpController extends Controller
     /**
      * Register the new user.
      *
-     * @param \Illuminate\Http\Request $request
-     *
+     * @param UserSignUpRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function register(Request $request)
+    public function register(UserSignUpRequest $request)
     {
         if (Auth::check())
             return redirect('sites.list');
 
-        $credentials = $request->validate([
-            'name' => 'required||string|min:3|max:100',
-            'email' => 'required|unique:users,email|email|min:3|max:150',
-            'password' => 'required|string|min:6|max:100'
-        ]);
+        $credentials = $request->validated();
 
         $user = User::create($credentials);
 
         if ($user) {
-            Auth::login($user, true);
+            Auth::login($user);
             $request->session()->regenerate();
 
             return redirect()->intended(route('sites.list'));
         }
 
-        return back()->withErrors([
+        return back()
+            ->withInput($request->input())
+            ->withErrors([
             'register' => 'There was an error when registering.',
         ]);
     }

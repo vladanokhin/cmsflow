@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\UserSignInRequest;
 
 class SignInController extends Controller
 {
@@ -21,12 +22,15 @@ class SignInController extends Controller
         return view('sign_in');
     }
 
-    public function login(Request $request)
+    /**
+     * User login.
+     *
+     * @param UserSignInRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function login(UserSignInRequest $request)
     {
-        $credentials = $request->validate([
-            'email' => 'required|email|min:3|max:150',
-            'password' => 'required|string|min:6|max:100'
-        ]);
+        $credentials = $request->validated();
         $rememberMe = $request->boolean('rememberMe');
 
         if (Auth::attempt($credentials, $rememberMe)) {
@@ -35,7 +39,9 @@ class SignInController extends Controller
             return redirect()->intended(route('sites.list'));
         }
 
-        return back()->withErrors([
+        return back()
+            ->withInput($request->input())
+            ->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ]);
     }
