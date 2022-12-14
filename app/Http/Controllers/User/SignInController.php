@@ -4,14 +4,11 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\UserSignInRequest;
 
 class SignInController extends Controller
 {
-
-
     /**
      *  Show the page for sing in user.
      *
@@ -35,7 +32,6 @@ class SignInController extends Controller
 
         if (Auth::attempt($credentials, $rememberMe)) {
             $request->session()->regenerate();
-
             return redirect()->intended(route('sites.list'));
         }
 

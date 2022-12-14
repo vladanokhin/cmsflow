@@ -29,8 +29,9 @@ class InitSitesProvider extends ServiceProvider
      */
     public function boot()
     {
+        // The first need create sites links
+        // ln -s ~/sites/ storage/app/
         $pathToSites = Storage::path('sites');
-        // Create links ln -s ~/sites/ storage/app/
 
         if (File::exists($pathToSites) && !File::isEmptyDirectory($pathToSites) &&
             Schema::hasTable('sites'))

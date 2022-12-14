@@ -35,18 +35,18 @@ class SignUpController extends Controller
 
         $user = User::create($credentials);
 
-        if ($user) {
-            Auth::login($user);
-            $request->session()->regenerate();
-
-            return redirect()->intended(route('sites.list'));
+        if (!$user) {
+            return back()
+                ->withInput($request->input())
+                ->withErrors([
+                    'register' => 'There was an error when registering.',
+                ]);
         }
 
-        return back()
-            ->withInput($request->input())
-            ->withErrors([
-            'register' => 'There was an error when registering.',
-        ]);
+        Auth::login($user);
+        $request->session()->regenerate();
+
+        return redirect()->intended(route('sites.list'));
     }
 
 }

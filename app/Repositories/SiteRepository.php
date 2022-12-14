@@ -10,8 +10,6 @@ use App\Models\Site;
  */
 class SiteRepository extends BaseRepository
 {
-
-
     /**
      * @return string
      *  Return the model
